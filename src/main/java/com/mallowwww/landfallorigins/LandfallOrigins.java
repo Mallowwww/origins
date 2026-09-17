@@ -1,5 +1,7 @@
 package com.mallowwww.landfallorigins;
 
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.player.Player;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -25,6 +27,10 @@ public class LandfallOrigins {
 
     private void commonSetup(FMLCommonSetupEvent event) {
 
+    }
+
+    public static ResourceLocation path(String s) {
+        return ResourceLocation.fromNamespaceAndPath(MODID, s);
     }
 
     @SubscribeEvent
