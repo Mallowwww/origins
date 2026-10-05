@@ -1,5 +1,7 @@
 package com.mallowwww.landfallorigins;
 
+import com.mallowwww.landfallorigins.attachment.OriginDataAttachment;
+import com.mallowwww.landfallorigins.registry.OriginRegistry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
 import org.slf4j.Logger;
@@ -21,7 +23,7 @@ public class LandfallOrigins {
     public static final Logger LOGGER = LogUtils.getLogger();
     public LandfallOrigins(IEventBus modEventBus, ModContainer modContainer) {
         modEventBus.addListener(this::commonSetup);
-
+        ModAttachments.init(modEventBus);
         NeoForge.EVENT_BUS.register(this);
     }
 

@@ -2,6 +2,7 @@ package com.mallowwww.landfallorigins;
 
 import com.mallowwww.landfallorigins.attachment.OriginDataAttachment;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.attachment.AttachmentType;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -18,4 +19,7 @@ public class ModAttachments {
                     .sync(OriginDataAttachment.STREAM_CODEC)
                     .build()
     );
+    public static void init(IEventBus eventBus) {
+        ATTACHMENTS.register(eventBus);
+    }
 }
